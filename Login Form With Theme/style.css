@@ -1,0 +1,151 @@
+:root {
+  --background: #1a1a2e; /* Default background color */
+  --color: #ffffff; /* Default text color */
+  --primary-color: #0f3460; /* Default primary color */
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for in-page links */
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif; /* Use Poppins font */
+  background: var(--background); /* Background color from CSS variable */
+  color: var(--color); /* Text color from CSS variable */
+  letter-spacing: 1px; /* Slight letter spacing */
+  transition: background 0.2s ease, color 0.2s ease; /* Smooth transition for background and text color */
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: var(--color); /* Link color from CSS variable */
+}
+
+h1 {
+  font-size: 2.5rem; /* Large font size for h1 */
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+.login-container {
+  position: relative; /* For positioning the circles */
+  width: 22.2rem; /* Fixed width for the login container */
+}
+
+.form-container {
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+  box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  backdrop-filter: blur(20px); /* Glassmorphism effect */
+  z-index: 99; /* Position above the circles */
+  padding: 2rem; /* Padding inside the form */
+}
+
+.login-container form input {
+  display: block; /* Block display for full width */
+  padding: 14.5px; /* Padding inside input fields */
+  width: 100%; /* Full width */
+  margin: 2rem 0; /* Margin between input fields */
+  color: var(--color); /* Text color from CSS variable */
+  background-color: rgba(255, 255, 255, 0.2); /* Light background for input fields */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 15px; /* Font size */
+  backdrop-filter: blur(15px); /* Glassmorphism effect */
+}
+
+.login-container form input:focus {
+  box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2); /* Shadow on focus */
+  animation: wobble 0.3s ease-in; /* Wobble animation on focus */
+}
+
+.login-container form button {
+  background-color: var(--primary-color); /* Background color from CSS variable */
+  color: var(--color); /* Text color from CSS variable */
+  padding: 13px; /* Padding inside button */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold font */
+  width: 100%; /* Full width */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-bottom: 2rem; /* Bottom margin */
+  transition: all 0.1s ease-in-out; /* Smooth transition */
+  border: none; /* No border */
+}
+
+.login-container form button:hover {
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15); /* Shadow on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.circle {
+  width: 8rem; /* Fixed width */
+  height: 8rem; /* Fixed height */
+  background: var(--primary-color); /* Background color from CSS variable */
+  border-radius: 50%; /* Make it circular */
+  position: absolute; /* Position absolutely */
+}
+
+.circle-one {
+  top: 0;
+  left: 0;
+  transform: translate(-45%, -45%); /* Position relative to the parent */
+}
+
+.circle-two {
+  bottom: 0;
+  right: 0;
+  transform: translate(45%, 45%); /* Position relative to the parent */
+}
+
+.register-forget {
+  margin: 1rem 0; /* Margin on top and bottom */
+  display: flex; /* Flex display for horizontal alignment */
+  justify-content: space-between; /* Space between the links */
+}
+
+.opacity {
+  opacity: 0.8; /* Slightly transparent */
+}
+
+.theme-btn-container {
+  position: absolute; /* Position absolutely */
+  left: 0;
+  bottom: 2rem; /* Position at the bottom left */
+}
+
+.theme-btn {
+  cursor: pointer; /* Pointer cursor */
+  transition: all 0.3s ease-in; /* Smooth transition */
+  width: 25px; /* Width */
+  height: 25px; /* Height */
+}
+
+.theme-btn:hover {
+  width: 40px !important; /* Increase width on hover */
+}
+
+@keyframes wobble {
+  0% {
+    transform: scale(1.025); /* Slightly larger */
+  }
+  25% {
+    transform: scale(1); /* Original size */
+  }
+  75% {
+    transform: scale(1.025); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1); /* Original size */
+  }
+}
